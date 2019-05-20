@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package arbolbinario;
+
+/**
+ *
+ * @author aalvarad
+ */
+public class Nodo {
+    
+    int dato;
+    String Nombre;
+    Nodo hijoizquierdo, hijoderecho;
+    
+    public Nodo(int dato, String Nombre){
+        this.dato = dato;
+        this.Nombre=Nombre;
+        this.hijoizquierdo = null;
+        this.hijoderecho= null;
+    }
+     
+    public String ToString(){
+        return Nombre + "su dato es "+dato;
+    }
+    
+     
+    
+}

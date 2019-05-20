@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package arbolbinario;
+
+/**
+ *
+ * @author aalvarad
+ */
+public class Arbol {
+    
+    Nodo raiz;
+    
+    public Arbol(){
+        raiz=null;
+    }
+    
+    // Metodo para insertar un nodo en el arbol
+    
+    public void agregarNodo(int dato, String Nombre){
+        Nodo nuevo = new Nodo(dato,Nombre);
+        if(raiz==null)
+            raiz=nuevo;
+        else
+        {
+            Nodo Auxiliar = raiz;
+            Nodo Padre;
+            while(true){
+                Padre=Auxiliar;
+                if(dato<Auxiliar.dato)
+                {
+                    Auxiliar=Auxiliar.hijoizquierdo;
+                    if(Auxiliar==null){
+                    Padre.hijoizquierdo=nuevo;
+                    return;
+                                      }
+                }
+                else
+                {
+                    Auxiliar=Auxiliar.hijoderecho;
+                    if(Auxiliar==null){
+                       Padre.hijoderecho=nuevo;
+                       return;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    
+    public boolean Estavacio()
+    {
+        return raiz==null;
+    }
+    
+    // recorrido de un arbol
+     public void InOrden(Nodo r)
+    {
+        if(r!=null)
+        {
+            InOrden(r.hijoizquierdo);
+            System.out.println(r.dato);
+            InOrden(r.hijoderecho);
+        }   
+    }
+     
+    
+}
